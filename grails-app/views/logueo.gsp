@@ -9,7 +9,7 @@
 <html>
         <head>
             <meta name="layout" content="main"/>
-            <title>Simple login</title>
+            <title> Terminal de Buses </title>
             <style type="text/css">
                     label{
                         float:left;
