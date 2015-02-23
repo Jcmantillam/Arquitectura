@@ -14,6 +14,14 @@ class UsuarioController {
         String contra="abc123"
         def u = new Usuario(nombreUsuario: nameUser, nombre: name, apellido: apellido, correo: mail, contraseña: contra)
         u.save(flush:true)
+        //Usuario de la monitora
+        nameUser="Yessika"
+        name="Yesika Marlén"
+        apellido="Ramírez"
+        mail="yemramirezca@unal.edu.co"
+        contra="yesiramirez1"
+        u = new Usuario(nombreUsuario: nameUser, nombre: name, apellido: apellido, correo: mail, contraseña: contra)
+        u.save(flush:true)
     }
     
     def Entrar={
