@@ -17,6 +17,7 @@ class UsuarioController {
     }
     
     def Entrar={
+        init()
         if(session.Usuario){
             flash.messageL="Hay un usuario logueado"
             render (view:"/logueosalir")
@@ -58,7 +59,7 @@ class UsuarioController {
     def Registrarse={
         def u = new Usuario(nombreUsuario: params.nameUser, nombre: params.name, apellido: params.lastname, correo: params.email, contraseña: params.password)
         if (u.validate()) {
-            flash.message = "Usuario registrado exitosamente"
+            flash.messageM = "Usuario registrado exitosamente"
             render view:"/logueo"
             u.save(flush:true)
         }
