@@ -18,6 +18,7 @@
             </style>
 	</head>
 	<body>
+            <font color="blue" size="5"> ${flash.messageM} </font>
             <g:form controller="Usuario" action="Entrar">
                     <center>
                         <font color="red" size="2"> ${flash.messageL} </font>
