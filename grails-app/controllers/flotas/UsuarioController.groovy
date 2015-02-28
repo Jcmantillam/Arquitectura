@@ -32,7 +32,8 @@ class UsuarioController {
                     session.Nombre = consult.nombre
                     session.Apellido = consult.apellido
                     session.Correo = consult.correo
-                    render view:"/usuario/usuario"
+                    flash.messageB=consult.nombre//Para añadir a la cabecera de la interfaz principal
+                    render view:"/usuario/vista_cliente"//Falta colocar la seleccion entre las vistas segun el rol
                 }else{
                     flash.messageL="Contraseña incorrecta"
                     render (view:"/logueo")
@@ -48,7 +49,7 @@ class UsuarioController {
     }
     
     def VolveraSesion={
-        render view:"/usuario/usuario"
+        render view:"/usuario/vista_cliente"
     }
     
     def nuevo_usuario={
@@ -103,4 +104,13 @@ class UsuarioController {
     def Volver={
         render (view:"/logueo")
     }
+    
+    def MostrarInfo={
+        render (view:"/usuario/usuario")
+    }
+    
+    def Atras={
+        render (view:"/usuario/vista_cliente")
+    }
+    //Aqui crear funciones de las vistas cliente y administrador
 }

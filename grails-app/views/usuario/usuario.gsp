@@ -36,5 +36,11 @@
                <label>&nbsp;</label><input type="submit" value="Salir"/>
             </center>
         </g:form>
+        <br>
+        <g:form controller="Usuario" action="Atras">
+            <center>
+               <label>&nbsp;</label><input type="submit" value="Atras"/>
+            </center>
+        </g:form>
     </body>
 </html>
