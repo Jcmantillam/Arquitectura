@@ -12,13 +12,10 @@
             <!--Mensaje de la cabecera, colocar nombre de usuario-->
             <title> Bienvenido ${flash.messageB} </title> 
             <style type="text/css">
-                    label{
-                        float:left;
-                        height:5em;
-                        margin:3px;
-                        padding;3px;
-                        width:5em;
-                    }
+                label{
+                    float:left;
+                    width:65px;
+                }
             </style>
 	</head>
     <body>
@@ -38,15 +35,25 @@
         </g:form>
         
         <br>
-        <g:form controller="Usuario" action="Comprar">
-            <label>&nbsp;</label><input type="submit" value="Comprar pasaje nuevo"/>
-        </g:form>
-        <g:form controller="Usuario" action="Cambiar">
-            <label>&nbsp;</label><input type="submit" value="Cambiar pasaje"/>
-        </g:form>
-        <g:form controller="Usuario" action="Imprimir">
-            <label>&nbsp;</label><input type="submit" value="Imprimir pasaje"/>
-        </g:form>
+        <table>
+            <tr>
+                <td>
+                    <g:form controller="Usuario" action="Comprar">
+                        <label>&nbsp;</label><input type="submit" value="Comprar pasaje nuevo"/>
+                    </g:form>
+                </td>
+                <td>
+                    <g:form controller="Usuario" action="Cambiar">
+                        <label>&nbsp;</label><input type="submit" value="Cambiar pasaje"/>
+                    </g:form>
+                </td>
+                <td>
+                    <g:form controller="Usuario" action="Imprimir">
+                        <label>&nbsp;</label><input type="submit" value="Imprimir pasaje"/>
+                    </g:form>
+                </td>
+            </tr>
+        </table>
         <br>
         <g:form controller="Usuario" action="Cancelar">
             <center>
