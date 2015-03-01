@@ -6,6 +6,7 @@ class Pasaje {
     String origen
     String destino
     boolean retorno
+    boolean diponible
     String pasajero
     String empresa
     String placa
@@ -19,7 +20,6 @@ class Pasaje {
         num_viaje (blank:false, unique:true)
         origen (blank:false)
         destino (blank:false)
-        pasajero (blank: false)
         empresa (blank: false)
         placa (blank: false, size: 6..9)
         fecha_viaje (blank: false)

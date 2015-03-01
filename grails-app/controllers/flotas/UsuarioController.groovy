@@ -147,5 +147,8 @@ class UsuarioController {
         [usuarios:listadoUsuarios]
     }
     
+    def Comprar={
+        render (view:"/usuario/comprarBoleto")
+    }
     
 }
