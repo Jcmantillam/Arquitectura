@@ -8,6 +8,7 @@
 
 <html>
         <head>
+
             <meta name="layout" content="main"/>
             <title> Terminal de Buses </title>
             <style type="text/css">
