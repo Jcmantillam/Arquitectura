@@ -36,13 +36,16 @@
             </center>
         </g:form>
         <br>
+        <center>
         <g:form controller="Usuario" action="Crear viaje">
-            <center>
-                <label>&nbsp;</label><input type="submit" value="Comprar viaje"/>
-            </center>
+            <label>&nbsp;</label><input type="submit" value="Comprar viaje"/>
         </g:form>
         <br>
+        <g:form controller="Usuario" action="listado">
+            <label>&nbsp;</label><input type="submit" value="Lista de usuarios">
+        </g:form>
         <br>
+        </center>
         <g:form controller="Usuario" action="Salir">
             <center>
                 <label>&nbsp;</label><input type="submit" value="Salir"/>

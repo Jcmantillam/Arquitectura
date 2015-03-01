@@ -2,12 +2,12 @@ package flotas
 
 class UsuarioController {
 
-    def index() {
+    def index(){
         
     }
     
     def logueo(){
-        initi()
+        init()
     }
     
     def init={
@@ -29,6 +29,7 @@ class UsuarioController {
     }
     
     def Entrar={
+        init()
         if(session.Usuario){
             flash.messageL="Hay un usuario logueado"
             render (view:"/logueosalir")
@@ -65,7 +66,11 @@ class UsuarioController {
     }
     
     def VolveraSesion={
-        render view:"/usuario/vista_cliente"
+        if(session.rol=="usuario"){
+            render (view:"/usuario/vista_cliente")
+        }else{
+            render (view:"/usuario/admin")
+        }
     }
     
     def nuevo_usuario={
@@ -136,5 +141,11 @@ class UsuarioController {
             render (view:"/usuario/admin")
         }
     }
-    //Aqui crear funciones de las vistas cliente y administrador
+    
+    def listado={      
+        def listadoUsuarios = Usuario.list()
+        [usuarios:listadoUsuarios]
+    }
+    
+    
 }
