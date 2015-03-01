@@ -6,18 +6,29 @@ class UsuarioController {
         
     }
     
+    def logueo(){
+        initi()
+    }
+    
     def init={
-        String nameUser="usuario"
-        String name="Pepito"
-        String apellido="Jajaja"
-        String mail="usuario@user.com"
-        String contra="abc123"
-        def u = new Usuario(nombreUsuario: nameUser, nombre: name, apellido: apellido, correo: mail, contraseña: contra)
+        def u = new Usuario(nombreUsuario: "usuario", 
+                            nombre: "Richard", 
+                            apellido: "Stallman", 
+                            correo: "rstall@unix.com", 
+                            contraseña: "abc123", 
+                            rol: "usuario")
         u.save(flush:true)
+        
+        def admin = new Usuario(nombreUsuario: "Admin", 
+                            nombre: "Camilo", 
+                            apellido: "Mantilla", 
+                            correo: "jcmantillam@una.edu.co", 
+                            contraseña: "Camilo_89", 
+                            rol: "admin")
+        admin.save(flush:true)
     }
     
     def Entrar={
-        init()
         if(session.Usuario){
             flash.messageL="Hay un usuario logueado"
             render (view:"/logueosalir")
@@ -32,8 +43,13 @@ class UsuarioController {
                     session.Nombre = consult.nombre
                     session.Apellido = consult.apellido
                     session.Correo = consult.correo
-                    flash.messageB=consult.nombre//Para añadir a la cabecera de la interfaz principal
-                    render view:"/usuario/vista_cliente"//Falta colocar la seleccion entre las vistas segun el rol
+                    session.rol = consult.rol
+                    if(session.rol == "usuario"){
+                        render view:"/usuario/vista_cliente"
+                    }
+                    if(session.rol == "admin"){
+                        render view:"/usuario/admin"
+                    }
                 }else{
                     flash.messageL="Contraseña incorrecta"
                     render (view:"/logueo")
@@ -53,12 +69,16 @@ class UsuarioController {
     }
     
     def nuevo_usuario={
-        init()
         render (view:"/nuevo_usuario")
     }
     
     def Registrarse={
-        def u = new Usuario(nombreUsuario: params.nameUser, nombre: params.name, apellido: params.lastname, correo: params.email, contraseña: params.password)
+         def u = new Usuario(nombreUsuario: params.nameUser, 
+                            nombre: params.name, 
+                            apellido: params.lastname, 
+                            correo: params.email, 
+                            contraseña: params.password, 
+                            rol: "usuario")
         if (u.validate()) {
             flash.messageM = "Usuario registrado exitosamente"
             render view:"/logueo"
@@ -110,7 +130,11 @@ class UsuarioController {
     }
     
     def Atras={
-        render (view:"/usuario/vista_cliente")
+        if(session.rol=="usuario"){
+            render (view:"/usuario/vista_cliente")
+        }else{
+            render (view:"/usuario/admin")
+        }
     }
     //Aqui crear funciones de las vistas cliente y administrador
 }

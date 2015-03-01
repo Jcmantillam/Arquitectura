@@ -5,6 +5,7 @@ class Usuario {
     String apellido
     String nombreUsuario
     String correo
+    String rol
     String contraseña
     
     static constraints = {
@@ -13,5 +14,6 @@ class Usuario {
         apellido (blank:false)
         correo (blank:false, unique:true, email:true)
         contraseña (blank:false, size:4..12, password:true)
+        rol (inList:["usuario","admin"])
     }
 }
