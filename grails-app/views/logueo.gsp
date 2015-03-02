@@ -17,7 +17,13 @@
                         width:65px;
                     }
             </style>
-	</head>
+            <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+            <title>Simple Tigra Calendar</title>
+
+            <!-- link calendar resources -->
+            <link rel="stylesheet" type="text/css" href="tcal.css" />
+            <script type="text/javascript" src="tcal.js"></script> 
+           </head>
 	<body>
             <font color="blue" size="5"> ${flash.messageM} </font>
             <g:form controller="Usuario" action="Entrar">
@@ -27,6 +33,8 @@
                             <p>
                                 <br>Usuario:<g:textField name="nameUser"/><br>
                                 Contraseña:<g:passwordField name="password"/>
+                                
+
                             </p>
                         </div>
                         <br>

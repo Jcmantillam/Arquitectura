@@ -37,8 +37,8 @@
         </g:form>
         <br>
         <center>
-        <g:form controller="Usuario" action="Crear viaje">
-            <label>&nbsp;</label><input type="submit" value="Comprar viaje"/>
+        <g:form controller="pasaje" action="crear">
+            <label>&nbsp;</label><input type="submit" value="Crear viajes"/>
         </g:form>
         <br>
         <g:form controller="Usuario" action="listado">

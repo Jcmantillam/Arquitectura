@@ -1,12 +1,12 @@
 package flotas
 
 class Pasaje {
-    String id
-    int num_viaje
+    
+    int id
     String origen
     String destino
     boolean retorno
-    boolean diponible
+    boolean disponible
     String pasajero
     String empresa
     String placa
@@ -17,10 +17,10 @@ class Pasaje {
       
     static constraints = {
         id (blank:false, unique:true)
-        num_viaje (blank:false, unique:true)
         origen (blank:false)
         destino (blank:false)
         empresa (blank: false)
+        asiento (blank:false)
         placa (blank: false, size: 6..9)
         fecha_viaje (blank: false)
         precio (blank: false)
