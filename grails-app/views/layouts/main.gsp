@@ -25,7 +25,7 @@
             <tr>
                 <g:form controller="Usuario" action="Entrar">
                     <td width="208"><strong><img src="http://localhost:8080/Flotas/assets/logo2.png" width="163" height="43" alt="term" /></strong></td>
-                    <td width="200"><font color="red" size="2"> ${flash.messageL} </font>
+                    <td width="200"><font color="firebrick" size="2"> ${flash.messageL} </font>
                     </td>
                     <td width="366"><p>
                         <font size="1" color="white">
