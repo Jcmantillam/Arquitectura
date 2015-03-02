@@ -1,0 +1,42 @@
+package com.example.tests;
+
+import com.thoughtworks.selenium.*;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import static org.junit.Assert.*;
+import java.util.regex.Pattern;
+
+public class test rol junit RC {
+	private Selenium selenium;
+
+	@Before
+	public void setUp() throws Exception {
+		selenium = new DefaultSelenium("localhost", 4444, "*chrome", "http://localhost:8080/");
+		selenium.start();
+	}
+
+	@Test
+	public void testTest rol junit RC() throws Exception {
+		selenium.open("/Flotas/");
+		selenium.type("css=p > #nameUser", "Admin");
+		selenium.type("css=p > #password", "Camilo_89");
+		selenium.click("css=center > input[type=\"submit\"]");
+		selenium.waitForPageToLoad("30000");
+		selenium.click("css=center > input[type=\"submit\"]");
+		selenium.click("css=center > input[type=\"submit\"]");
+		selenium.waitForPageToLoad("30000");
+		selenium.type("css=p > #nameUser", "usuario");
+		selenium.type("css=p > #nameUser", "usuario");
+		selenium.type("css=p > #password", "abc123");
+		selenium.type("css=p > #password", "abc123");
+		selenium.click("css=center > input[type=\"submit\"]");
+		selenium.click("css=center > input[type=\"submit\"]");
+		selenium.waitForPageToLoad("30000");
+	}
+
+	@After
+	public void tearDown() throws Exception {
+		selenium.stop();
+	}
+}
