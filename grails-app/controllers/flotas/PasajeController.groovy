@@ -8,19 +8,20 @@ class PasajeController {
                             origen: params.origen, 
                             destino: params.destino, 
                             retorno: params.retorno, 
-                            empresa:params.empresa,
+                            empresa: params.empresa,
                             placa: params.placa,
                             asiento:params.asiento,
                             fecha_viaje: params.fecha,
-                            precio: params.precio, )
+                            precio: params.precio )
         if (u.validate()) {
-            flash.messageM = "creado"
+            flash.message = "creado"
             render view:"/usuario/admin"
             print (u.asiento)
             u.save(flush:true)
         }
         else {
-            flash.messageM = "error!"
+            //flash.message = "error!"
+            render view:"/pasaje/crear"
             /*def error = ""
                 if (u.errors.hasFieldErrors("nombreUsuario")) {
                     def consult = Usuario.findByNombreUsuario(params.nameUser)

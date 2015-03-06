@@ -17,7 +17,7 @@ class UsuarioController {
                             correo: "rstall@unix.com", 
                             contraseña: "abc123", 
                             rol: "usuario")
-        u.save(flush:true)
+        u.save()
         
         def admin = new Usuario(nombreUsuario: "Admin", 
                             nombre: "Camilo", 
@@ -25,7 +25,7 @@ class UsuarioController {
                             correo: "jcmantillam@una.edu.co", 
                             contraseña: "Camilo_89", 
                             rol: "admin")
-        admin.save(flush:true)
+        admin.save()
     }
     
     def Entrar={
