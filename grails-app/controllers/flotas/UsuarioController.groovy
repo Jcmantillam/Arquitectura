@@ -15,7 +15,7 @@ class UsuarioController {
                             nombre: "Richard", 
                             apellido: "Stallman", 
                             correo: "rstall@unix.com",  
-                            contraseña: encodePassword("abc123",null),
+                            contraseña: "abc123",
                             rol: "usuario")
         u.save(flush:true)
         
