@@ -78,6 +78,7 @@ class UsuarioController {
     }
     
     def Registrarse={
+        init()
          def u = new Usuario(nombreUsuario: params.nameUser, 
                             nombre: params.name, 
                             apellido: params.lastname, 
