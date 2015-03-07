@@ -14,18 +14,18 @@ class UsuarioController {
         def u = new Usuario(nombreUsuario: "usuario", 
                             nombre: "Richard", 
                             apellido: "Stallman", 
-                            correo: "rstall@unix.com", 
-                            contraseña: "abc123", 
+                            correo: "rstall@unix.com",  
+                            contraseña: encodePassword("abc123",null),
                             rol: "usuario")
-        u.save()
+        u.save(flush:true)
         
         def admin = new Usuario(nombreUsuario: "Admin", 
                             nombre: "Camilo", 
                             apellido: "Mantilla", 
                             correo: "jcmantillam@una.edu.co", 
-                            contraseña: "Camilo_89", 
+                            contraseña: "Camilo_89",
                             rol: "admin")
-        admin.save()
+        admin.save(flush:true)
     }
     
     def Entrar={

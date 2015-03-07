@@ -1,12 +1,15 @@
 package flotas
 
 class Usuario {
+    
     String nombre
     String apellido
     String nombreUsuario
     String correo
     String rol
     String contraseña
+    
+    static hasMany = [pasaje:Pasaje]
     
     static constraints = {
         nombreUsuario (blank:false, unique:true)
@@ -19,9 +22,10 @@ class Usuario {
     
     static mapping={
         table "Usuario"
+        id generator: 'assigned', name: "nombreUsuario", type: 'string'
         version false
         columns{
-            id nombreUsuario: 'Nombre_de_usuario'
+            nombreUsuario column: 'Nomn'
             nombre column: 'Nombre'
             apellido column: 'Apellido'
             correo column: 'Correo'

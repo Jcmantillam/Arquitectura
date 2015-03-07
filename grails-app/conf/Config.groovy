@@ -40,6 +40,7 @@ grails.views.default.codec = "html"
 // The default scope for controllers. May be prototype, session or singleton.
 // If unspecified, controllers are prototype scoped.
 grails.controllers.defaultScope = 'singleton'
+grails.plugins.springsecurity.password.algorithm='SHA-512'
 
 // GSP settings
 grails {

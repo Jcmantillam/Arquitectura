@@ -2,7 +2,8 @@ package flotas
 
 class Pasaje {
     
-    String id
+    String nombreUsuario
+    String placaBus
     String origen
     String destino
     boolean retorno
@@ -10,19 +11,21 @@ class Pasaje {
     String pasajero
     String empresa
     String placa
-    String asiento
-    Date fecha_viaje
-    Date fecha_venta
-    String precio
+    int asiento //Por definir si es un int o un String
+    Date fechaViaje
+    Date fechaVenta
+    int precio
+    
+    static belongsTo = [bus:Bus]
       
     static constraints = {
-        id (blank:false, unique:true)
-        origen (blank:false)
-        destino (blank:false)
-        empresa (blank: false)
-        asiento (blank:false)
-        placa (blank: false, size: 6..9)
-        fecha_viaje (blank: false)
-        precio (blank: false)
+        nombreUsuario (unique:true)
+        placaBus (matches:"[a-zA-Z][a-zA-Z][a-zA-Z]\\d{3}", unique:true)//valida que la palca sea 3 l3tras consecutivas y 3 números consecutivos
+        fechaViaje (min: new Date())//el viaje debe ser de al menos la fecha de compra
+    }
+    
+    static mapping={
+        table "Pasajes"
+        version false
     }
 }
