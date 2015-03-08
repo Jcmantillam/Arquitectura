@@ -1,7 +1,6 @@
 package flotas
 
 class Usuario {
-    
     String nombre
     String apellido
     String nombreUsuario
@@ -9,7 +8,7 @@ class Usuario {
     String rol
     String contraseña
     
-    static hasMany = [pasaje:Pasaje]
+    static hasMany = [pasajes:Pasaje]
     
     static constraints = {
         nombreUsuario (blank:false, unique:true)

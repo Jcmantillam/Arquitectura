@@ -2,18 +2,19 @@ package flotas
 
 class Empresa {
     
-    int idEmpresa
-    String representanteLegal
+    String idEmpresa
+    String nombreEmpresa
 
-    static hasMany = [bus:Bus]
+    static hasMany = [buses:Bus]
     
     static constraints = {
-        idEmpresa (blank:false, unique:true)
-        representanteLegal (blank:false)
+        id (blank:false, unique:true)
+        nombreEmpresa (blank:false, unique:true)
     }
     
     static mapping={
         table "Empresas"
+        id generator: 'assigned', name: "idEmpresa", type: 'String'
         version false
     }
 }
