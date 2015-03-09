@@ -28,7 +28,9 @@ class UsuarioControllerSpec extends Specification {
             String apellido="rodriguez"
             String mail="andres@hotmail.com"
             String contra="123"
-            def user = new Usuario(nombreUsuario: nameUser, nombre: name, apellido: apellido, correo: mail, contraseña: contra)
+            String mRol="usuario"
+            
+            def user = new Usuario(nombreUsuario: nameUser, nombre: name, apellido: apellido, correo: mail, contraseña: contra, rol: mRol)
 
             user.validate()
 
@@ -44,7 +46,8 @@ class UsuarioControllerSpec extends Specification {
             apellido="rodriguez"
             mail="andres@hotmail.com"
             contra="1234"
-            user = new Usuario(nombreUsuario: nameUser, nombre: name, apellido: apellido, correo: mail, contraseña: contra)
+            mRol="usuario"
+            user = new Usuario(nombreUsuario: nameUser, nombre: name, apellido: apellido, correo: mail, contraseña: contra, rol: mRol)
 
             user.validate()
 
@@ -59,7 +62,8 @@ class UsuarioControllerSpec extends Specification {
             apellido="rodriguez"
             mail="andres"
             contra="1234"
-            user = new Usuario(nombreUsuario: nameUser, nombre: name, apellido: apellido, correo: mail, contraseña: contra)
+            mRol="usuario"
+            user = new Usuario(nombreUsuario: nameUser, nombre: name, apellido: apellido, correo: mail, contraseña: contra, rol: mRol)
 
             user.validate()
 
@@ -74,7 +78,8 @@ class UsuarioControllerSpec extends Specification {
             apellido="rodriguez"
             mail="andres@.com"
             contra="1234"
-            user = new Usuario(nombreUsuario: nameUser, nombre: name, apellido: apellido, correo: mail, contraseña: contra)
+            mRol="usuario"
+            user = new Usuario(nombreUsuario: nameUser, nombre: name, apellido: apellido, correo: mail, contraseña: contra, rol: mRol)
 
             user.validate()
 
@@ -88,7 +93,8 @@ class UsuarioControllerSpec extends Specification {
             apellido="rodriguez"
             mail="andres@hotmail.com"
             contra="1234"
-            user = new Usuario(nombreUsuario: nameUser, nombre: name, apellido: apellido, correo: mail, contraseña: contra)
+            mRol="usuario"
+            user = new Usuario(nombreUsuario: nameUser, nombre: name, apellido: apellido, correo: mail, contraseña: contra, rol: mRol)
 
             user.validate()
 
@@ -102,7 +108,8 @@ class UsuarioControllerSpec extends Specification {
             apellido="rodriguez"
             mail="andresfrancisc@hotmail.com"
             contra="123456789012"
-            user = new Usuario(nombreUsuario: nameUser, nombre: name, apellido: apellido, correo: mail, contraseña: contra)
+            mRol="usuario"
+            user = new Usuario(nombreUsuario: nameUser, nombre: name, apellido: apellido, correo: mail, contraseña: contra, rol: mRol)
 
             user.validate()
 
@@ -116,7 +123,8 @@ class UsuarioControllerSpec extends Specification {
             apellido="rodriguez"
             mail="juan23@hotmail.com"
             contra="1234567890123"
-            user = new Usuario(nombreUsuario: nameUser, nombre: name, apellido: apellido, correo: mail, contraseña: contra)
+            mRol="usuario"
+            user = new Usuario(nombreUsuario: nameUser, nombre: name, apellido: apellido, correo: mail, contraseña: contra, rol: mRol)
 
             user.validate()
 
@@ -130,7 +138,8 @@ class UsuarioControllerSpec extends Specification {
             apellido=""
             mail="carlos@.com"
             contra="asd"
-            user = new Usuario(nombreUsuario: nameUser, nombre: name, apellido: apellido, correo: mail, contraseña: contra)
+           mRol="usuario"
+            user = new Usuario(nombreUsuario: nameUser, nombre: name, apellido: apellido, correo: mail, contraseña: contra, rol: mRol)
 
             user.validate()
 
@@ -145,7 +154,8 @@ class UsuarioControllerSpec extends Specification {
             apellido="rodriguez"
             mail="cesar@hotmail.com"
             contra=""
-            user = new Usuario(nombreUsuario: nameUser, nombre: name, apellido: apellido, correo: mail, contraseña: contra)
+            mRol="usuario"
+            user = new Usuario(nombreUsuario: nameUser, nombre: name, apellido: apellido, correo: mail, contraseña: contra, rol: mRol)
 
             user.validate()
 
@@ -159,7 +169,8 @@ class UsuarioControllerSpec extends Specification {
             apellido="rodriguez"
             mail="andres@hotmail.com"
             contra="123"
-            user = new Usuario(nombreUsuario: nameUser, nombre: name, apellido: apellido, correo: mail, contraseña: contra)
+            mRol="usuario"
+            user = new Usuario(nombreUsuario: nameUser, nombre: name, apellido: apellido, correo: mail, contraseña: contra, rol: mRol)
 
             user.validate()
 
