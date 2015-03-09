@@ -3,58 +3,61 @@ package flotas
 class PasajeController {
 
     def index() { }
+    def vistaPasaje={
+        render (view: "/pasaje/crear")
+    }
+    
     def crear={
-         def u = new Pasaje( id: params.id, 
+         def u = new Pasaje(nombreUsuario: 'default', 
                             origen: params.origen, 
                             destino: params.destino, 
-                            retorno: params.retorno, 
+                            retorno: 0,
+                            disponible: 1,
                             empresa: params.empresa,
-                            placa: params.placa,
+                            bus: params.bus,
                             asiento:params.asiento,
-                            fecha_viaje: params.fecha,
+                            fechaViaje: params.fecha,
+                            fechaVenta: params.fecha,
                             precio: params.precio )
         if (u.validate()) {
             flash.message = "creado"
-            render view:"/usuario/admin"
-            print (u.asiento)
+            //print (u.asiento)
             u.save(flush:true)
+            render (view:"/usuario/admin")
         }
         else {
             //flash.message = "error!"
-            render view:"/pasaje/crear"
-            /*def error = ""
+            
+            def error = ""
+                if (u.errors.hasFieldErrors("origen")) {
+                    flash.message = "origen"
+                }
+                if (u.errors.hasFieldErrors("destino")) {
+                    flash.message = "destino"
+                }
+                if (u.errors.hasFieldErrors("empresa")) {
+                    flash.message = "empresa"
+                }
+                if (u.errors.hasFieldErrors("bus")) {
+                    flash.message = "bus"
+                }
+                if (u.errors.hasFieldErrors("asiento")) {
+                    flash.message = "asiento"
+                }
+                if (u.errors.hasFieldErrors("fecha")) {
+                    flash.message = "fecha"
+                }
+                if (u.errors.hasFieldErrors("precio")) {
+                    flash.message = "precio"
+                }
+                if (u.errors.hasFieldErrors("retorno")) {
+                    flash.message = "retorno"
+                }
                 if (u.errors.hasFieldErrors("nombreUsuario")) {
-                    def consult = Usuario.findByNombreUsuario(params.nameUser)
-                    if(consult!=null){
-                        flash.message1 = "El nombre de usuario ya existe"
-                        render view: ("/nuevo_usuario")
-                    }else{
-                        flash.message1 = "Debes escribir un nombre de usuario"
-                        render view: ("/nuevo_usuario")
-                    }
+                    flash.message = "NU"
                 }
-                if (u.errors.hasFieldErrors("nombre")) {
-                    flash.message2 = "El campo nombre es obligatorio."
-                    render view: ("/nuevo_usuario")
-                }
-                if (u.errors.hasFieldErrors("apellido")) {
-                    flash.message3 = "El campo apellido es obligatorio."
-                    render view: ("/nuevo_usuario")
-                }
-                if (u.errors.hasFieldErrors("correo")) {
-                    def consult = Usuario.findByCorreo(params.email)
-                    if(consult!=null){
-                        flash.message4 = "El correo ya ha sido registrado"
-                        render view: ("/nuevo_usuario")
-                    }else{
-                        flash.message4 = "Correo no válido"
-                        render view: ("/nuevo_usuario")
-                    }
-                }
-                if (u.errors.hasFieldErrors("contraseña")) {
-                    flash.message5 = "Debe ser una contraseña alfanumérica de 4 a 12 caracteres."
-                    render view: ("/nuevo_usuario")
-                }*/
+                else flash.message="en otros"
+                render view:"/pasaje/crear"
         }
     }
 }

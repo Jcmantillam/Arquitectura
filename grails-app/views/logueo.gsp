@@ -18,9 +18,7 @@
                     }
             </style>
             <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
-            <title>Simple Tigra Calendar</title>
-
-            <!-- link calendar resources -->
+            <title>Terminal de Transportes</title>
             <link rel="stylesheet" type="text/css" href="tcal.css" />
             <script type="text/javascript" src="tcal.js"></script> 
            </head>

@@ -23,29 +23,37 @@
 	</head>
     <body>
         <br>
-        <font> Bienvenido Admin. ${flash.messageB} </font>
+        <center><font size="2" color="blue"> Bienvenido Admin. ${flash.messageB} </font></center>
         <br>
         <g:form controller="Usuario" action="MostrarInfo">
             <label>&nbsp;</label><input type="submit" value="Mostrar Datos"/>
         </g:form>
         <br>
+        
         <g:form controller="Usuario">
             <p> Información de viajes</p>
             <center>
                 <!--Aqui consultas de los viajes creados, planeado para el sprint 3-->
             </center>
         </g:form>
-        <br>
-        <center>
-        <g:form controller="pasaje" action="crear">
-            <label>&nbsp;</label><input type="submit" value="Crear viajes"/>
-        </g:form>
+        <table>
+            <tr><td><label>&nbsp;</label></td>
+                <td><g:form controller="Empresa" action="vistaCrear">
+                     <input type="submit" value="Crear empresa"/>
+                   </g:form></td>
+                <td><g:form controller="bus" action="vistaBus">
+                     <input type="submit" value="crear Buses">
+                    </g:form></td>
+                <td><g:form controller="pasaje" action="vistaPasaje">
+                     <input type="submit" value="Crear viajes"/>
+                    </g:form></td>
+
+            </tr>
+        </table>
         <br>
         <g:form controller="Usuario" action="listado">
-            <label>&nbsp;</label><input type="submit" value="Lista de usuarios">
-        </g:form>
-        <br>
-        </center>
+                     <label>&nbsp;</label><input type="submit" value="Lista de usuarios">
+                    </g:form>
         <g:form controller="Usuario" action="Salir">
             <center>
                 <label>&nbsp;</label><input type="submit" value="Salir"/>

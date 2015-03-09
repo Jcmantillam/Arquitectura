@@ -1,0 +1,6 @@
+08/03/2015 08:30 pm
+-Persistencia en bases de datos
+-interfaz de admin cambiada
+-añadida funcionalidad de crear buses y empresas
+-reparada la funcionalidad de crear pasajes
+-no se trabaja algebra relacional

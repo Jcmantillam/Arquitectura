@@ -8,7 +8,7 @@ class Usuario {
     String rol
     String contraseña
     
-    static hasMany = [pasajes:Pasaje]
+    //static hasMany = [pasajes:Pasaje]
     
     static constraints = {
         nombreUsuario (blank:false, unique:true)

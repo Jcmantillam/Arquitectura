@@ -28,17 +28,17 @@ class UsuarioController {
         admin.save(flush:true)
         
         //Para guardar con relaciones:
-        int id = 1
-        def bus = new Bus(placaBus:"huk123", numeroSillas:30, conductorAsignado:"Raúl", tipoBus:"midibus")
+        //int id = 1
+        //def bus = new Bus(placaBus:"huk123", numeroSillas:30, conductorAsignado:"Raúl", tipoBus:"midibus")
         
-        def empresa = new Empresa(idEmpresa:"2", nombreEmpresa:"mic")
-        empresa.addToBuses(bus)
-        bus.setEmpresa(empresa)
+        //def empresa = new Empresa(idEmpresa:"2", nombreEmpresa:"mic")
+        //empresa.addToBuses(bus)
+        //bus.setEmpresa(empresa)
         
-        empresa.save(flush:true)
-        bus.save(flush:true)
+        //empresa.save(flush:true)
+        //bus.save(flush:true)
         
-        print(empresa.idEmpresa)
+       // print(empresa.idEmpresa)
 //    String placaBus
 //    int idEmpresa
 //    int numeroSillas//Por definir tipo
@@ -47,7 +47,7 @@ class UsuarioController {
     }
     
     def Entrar={
-        init()
+        //init()
         if(session.Usuario){
             flash.messageL="Hay un usuario logueado"
             render (view:"/logueosalir")

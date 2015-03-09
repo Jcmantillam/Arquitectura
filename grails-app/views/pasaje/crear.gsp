@@ -26,19 +26,23 @@
             <g:form controller="Pasaje" action='crear'>
             <center>
             <div style="width:220px">
-                <label>Codigo Pasaje:</label><g:textField name="id"/>
                 <label>Origen:</label><g:textField name="origen"/>
                 <lable>Destino:</label><g:textField type="text" name="destino"/>
                 <label>Empresa:</label> <g:textField type="text" name="empresa"/>
-                <label>Placa:</label> <g:textField type="text" name="placa"/>
+                <label>ID bus:</label> <g:textField type="text" name="bus"/>
                 <label>Asiento:</label> <g:textField type="text" name="asiento"/>
-                <label>Fecha:</label> <g:datePicker name="fecha" value="${new Date()}" relativeYears="[-2..7]"/>
+                <label>Fecha:</label> <g:datePicker name="fecha" value="${new Date()}" relativeYears="[0..7]"/>
                 <label>Precio:</label> <g:textField type="text" name="precio"/><br>
                 <input type="submit" value="Guardar Pasaje"/>
             </div>
             </center>
             </g:form>
         <br>
+        <g:form controller="Usuario" action="Atras">
+            <center>
+               <label>&nbsp;</label><input type="submit" value="Atrás"/>
+            </center>
+        </g:form>
         
     </body>
 </html>

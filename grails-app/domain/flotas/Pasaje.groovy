@@ -7,18 +7,19 @@ class Pasaje {
     String destino
     boolean retorno
     boolean disponible
-    String pasajero
+    //String pasajero
     String empresa
-    int asiento //Por definir si es un int o un String
+    String bus
+    String asiento //Por definir si es un int o un String
     Date fechaViaje
     Date fechaVenta
-    int precio
+    String precio
     
-    static belongsTo = [bus:Bus]
+    //static belongsTo = [bus:Bus]
       
     static constraints = {
-        nombreUsuario (unique:true)
-        fechaViaje (min: new Date())//el viaje debe ser de al menos la fecha de compra
+        //nombreUsuario (unique:true)
+        //fechaViaje (min: new Date())//el viaje debe ser de al menos la fecha de compra
     }
     
     static mapping={
