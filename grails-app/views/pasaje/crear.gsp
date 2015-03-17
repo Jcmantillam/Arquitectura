@@ -27,13 +27,17 @@
             <center>
             <div style="width:220px">
                 <label>Origen:</label><g:textField name="origen"/>
-                <lable>Destino:</label><g:textField type="text" name="destino"/>
-                <label>Empresa:</label> <g:textField type="text" name="empresa"/>
-                <label>ID bus:</label> <g:textField type="text" name="bus"/>
-                <label>Asiento:</label> <g:textField type="text" name="asiento"/>
+                <label>Destino:</label><g:textField type="text" name="destino"/>
+                <label>ID bus:</label> <br> <g:select name="bus" 
+                    from="${flotas.Bus.list()}" optionKey="placaBus" optionValue="placaBus" 
+                    noSelection="['':'-Elija la placa-']"/>
+                <br>
+                <label>Número de asiento:</label> <g:textField type="text" name="asiento"/>
                 <label>Fecha:</label> <g:datePicker name="fecha" value="${new Date()}" relativeYears="[0..7]"/>
+                <br>
                 <label>Precio:</label> <g:textField type="text" name="precio"/><br>
-                <input type="submit" value="Guardar Pasaje"/>
+                <br>
+                <input type="submit" value="Guardar Pasajes"/>
             </div>
             </center>
             </g:form>

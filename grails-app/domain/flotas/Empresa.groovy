@@ -5,7 +5,7 @@ class Empresa {
     String idEmpresa
     String nombreEmpresa
 
-    //static hasMany = [buses:Bus]
+    static hasMany = [buses:Bus]
     
     static constraints = {
         id (blank:false, unique:true)

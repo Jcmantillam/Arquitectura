@@ -13,7 +13,7 @@
 </head>
 <body>
 	<center>
-		<g:datePicker name="myDate" value="${new Date()}" relativeYears="[-2..7]"/>
+		<g:select name="select-pasaje.origen" from="${Pasaje.list()}" />
 	</center>
 </body>
 </html>

@@ -8,12 +8,21 @@ class BusController {
         render (view: "/bus/crearBus")
     }
     def crearBus={
+        println params.id
+        println params.placa
+        println params.cond
+        println params.idemp
+        println params.num
+        println params.btipo
         def b = new Bus(idBus: params.id,
                         placaBus:params.placa,
                         conductorAsignado: params.cond,
                         idEmpresa:params.idemp,
                         numeroSillas: params.num,
                         tipoBus: params.btipo )
+        def e = Empresa.findByIdEmpresa(params.idemp)
+        b.setEmpresa(e)
+        println b.validate()
         if (b.validate()) {
             flash.messageB = "Bus Creado"
             b.save(flush:true)

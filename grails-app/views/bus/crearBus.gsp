@@ -32,10 +32,16 @@
                 <div style="width:220px">
                     <label> codigo de Bus:     </label><input type="text" name="id">
                     <label> placa Bus:         </label><input type="text" name="placa">
-                    <label> ID empresa:        </label><input type="text" name="idemp">
+                    <label> ID empresa:        </label><br><g:select name="idemp" 
+                        from="${flotas.Empresa.list()}" optionKey="idEmpresa" optionValue="idEmpresa"
+                        noSelection="['null':'-Elija la empresa-']"/><br>
                     <label> numero Sillas:     </label><input type="text" name="num">
                     <label> conductor asignado:</label><input type="text" name="cond">
-                    <label> tipo de bus:       </label><input type="text" name="btipo">
+                    <label> tipo de bus:       </label><br><select name="btipo">
+                        <option selected>-Elija un tipo-</option>
+                        <option value="microbus">Microbus</option>
+                        <option value="minibus">Minibus</option>
+                        <option value="midibus">Midibus</option></select><br>
                     <input type="submit" value="Crear"> 
                 </div>
             </center>

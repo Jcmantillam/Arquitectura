@@ -2,7 +2,7 @@ package flotas
 
 class Pasaje {
     
-    String nombreUsuario
+    String idPasaje;
     String origen
     String destino
     boolean retorno
@@ -15,7 +15,8 @@ class Pasaje {
     Date fechaVenta
     String precio
     
-    //static belongsTo = [bus:Bus]
+    static belongsTo = [bus:Bus]
+    static hasMany = [usuarioPasaje: Usuario_Pasaje]
       
     static constraints = {
         //nombreUsuario (unique:true)
