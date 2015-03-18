@@ -26,7 +26,7 @@
             <p> Seleccione el viaje que desea cambiar:</p>
             <br>
             <g:form controller="Usuario" action="Modificar">
-                <g:select name="selectMod" from="${comprados}" optionKey="id" optionValue="origen - destino"
+                <g:select name="selectMod" from="${comprados}" optionKey="id" optionValue="origenAndDestino"
                         noSelection="['null':'-Elija el viaje a cambiar-']"/>
                 <br><br>
                 <label>&nbsp;</label><input type="submit" value="Modificar"/>

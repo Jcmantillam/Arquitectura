@@ -30,7 +30,7 @@
             <p> Seleccione el viaje que desea cancelar:</p>
             <br>
             <g:form controller="Usuario" action="Cancelar">
-                <g:select name="cancelMod" from="${comprados}" optionKey="id" optionValue="origen - destino"
+                <g:select name="cancelMod" from="${comprados}" optionKey="id" optionValue="origenAndDestino"
                         noSelection="['null':'-Elija el viaje a quitar-']"/>
                 <br><br>
                 <label>&nbsp;</label><g:actionSubmit type="submit" value="Cancelar" 

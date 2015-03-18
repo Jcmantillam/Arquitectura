@@ -23,8 +23,8 @@
         <center>
             <p>Ingrese el número de pasajes para el viaje (No más de ${numero})</p>
             <br>
-            <g:select name="numeroComprar" from="${1..numero}" value="${cantidad}"
-                noSelection="['null':'-Seleccione una cantidad-']"/>
+            <g:select name="numeroComprar" from="${1..10}" value="${numero}"
+                noSelection="['':'-Seleccione una cantidad-']"/>
         </center>
     </body>
 </html>

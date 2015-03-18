@@ -195,9 +195,14 @@ class UsuarioController {
     }
     
     def ComprarPasajes={
-        def num
-        num = Pasajes.findByIdPasaje(params.selectPasaje)
-        [numero:num.asiento]
+        
+        println params.selectPasaje.getIdPasaje
+        
+        
+        def num = Pasaje.findByIdPasaje("1")
+        println num
+        
         render(view:"/usuario/numeroCompra")
+        
     }
 }

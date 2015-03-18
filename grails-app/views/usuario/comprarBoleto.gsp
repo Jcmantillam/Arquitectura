@@ -22,9 +22,10 @@
 	<center>
             <g:form controller="Usuario" action="ComprarPasajes">
                 <br>
-                <g:select name="selectPasaje" from="${flotas.Pasaje.list()}" 
-                    optionKey="idPasaje" optionValue="origen" 
-                    noSelection="['null':'-Elija el viaje a comprar-']"/>
+                <g:select id="mySelect" name="selectPasaje" from="${flotas.Pasaje.list()}" 
+                    optionValue="origenAndDestino" 
+                    noSelection="['null':'-Elija el viaje a comprar-']"
+                    value="idPasaje"/>
                 <br><br>
                 <label>&nbsp;</label><input type="submit" value="Comprar"/>
             </g:form>

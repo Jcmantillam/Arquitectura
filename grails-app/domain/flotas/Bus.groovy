@@ -9,7 +9,7 @@ class Bus {
     String tipoBus
    
     
-    static hasMany = [pasajes:Pasaje]
+    static hasMany = [pasaje:Pasaje]
     static belongsTo = [empresa:Empresa]
     
     static constraints = {
