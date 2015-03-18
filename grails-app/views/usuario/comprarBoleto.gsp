@@ -20,7 +20,7 @@
     <body>
         <p> Compra de boletos de ${session.Nombre} ${session.Apellido}</p>
 	<center>
-            <g:form controller="Usuario" action="ComprarPasajes">
+            <g:form controller="Usuario" action="comprarPasajes">
                 <br>
                 <g:select id="mySelect" name="sPasaje" from="${flotas.Pasaje.list()}" 
                     optionKey="idPasaje" optionValue="origenAndDestino" 
