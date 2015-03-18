@@ -64,9 +64,11 @@ class UsuarioController {
                     session.Correo = consult.correo
                     session.rol = consult.rol
                     if(session.rol == "usuario"){
+                        flash.messageB = consult.nombre
                         render view:"/usuario/vista_cliente"
                     }
                     if(session.rol == "admin"){
+                        flash.messageB = consult.nombre
                         render view:"/usuario/admin"
                     }
                 }else{
@@ -170,4 +172,25 @@ class UsuarioController {
         render (view:"/usuario/comprarBoleto")
     }
     
+    def Lista_Tiquetes={
+        def tiquetes
+        tiquetes = Usuario_Pasaje.findAllByNombreUsuario(session.Nombre)
+        [comprados:tiquetes]
+        render(view:"/usuario/consultarTiquetes")
+    }
+    
+    def Modificar={
+        
+    }
+    
+    def ConsultCancelar={
+        def tiquetes
+        tiquetes = Usuario_Pasaje.findAllByNombreUsuario(session.Nombre)
+        [comprados:tiquetes]
+        render(view:"/usuario/cancelarBoleto")
+    }
+    
+    def Cancelar={
+        render("Cancelado")
+    }
 }

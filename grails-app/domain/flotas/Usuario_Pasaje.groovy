@@ -6,6 +6,8 @@ class Usuario_Pasaje {
     String idPasaje
     String placaBus
     String empresa
+    String origen
+    String destino
     int numeroComprados
     int id
     

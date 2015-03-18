@@ -17,7 +17,7 @@
                     width:65px;
                 }
             </style>
-	</head>
+    </head>
     <body>
         <br>
         <font> Bienvenido ${flash.messageB} </font>
@@ -43,7 +43,7 @@
                     </g:form>
                 </td>
                 <td>
-                    <g:form controller="Usuario" action="Cambiar">
+                    <g:form controller="Usuario" action="Lista_Tiquetes">
                         <label>&nbsp;</label><input type="submit" value="Cambiar pasaje"/>
                     </g:form>
                 </td>
@@ -55,7 +55,7 @@
             </tr>
         </table>
         <br>
-        <g:form controller="Usuario" action="Cancelar">
+        <g:form controller="Usuario" action="ConsultCancelar">
             <center>
                 <label>&nbsp;</label><input type="submit" value="Cancelar pasaje"/>
             </center>

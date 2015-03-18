@@ -7,13 +7,27 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 
 <html>
-<head>
+    <head>
 	<meta name="layout" content="main"/>
-	<title>Comprar boleto</title>
-</head>
-<body>
+            <title> Comprar Boleto </title> 
+            <style type="text/css">
+                label{
+                    float:left;
+                    width:65px;
+                }
+            </style>
+    </head>
+    <body>
+        <p> Compra de boletos de ${session.Nombre} ${session.Apellido}</p>
 	<center>
-		<g:select name="select-pasaje.origen" from="${Pasaje.list()}" />
+            <g:form controller="Usuario" action="ComprarPasajes">
+                <br>
+                <g:select name="select-pasaje" from="${flotas.Pasaje.list()}" 
+                    optionKey="idPasaje" optionValue="origen - destino" 
+                    noSelection="['null':'-Elija el viaje a comprar-']"/>
+                <br><br>
+                <label>&nbsp;</label><input type="submit" value="Comprar"/>
+            </g:form>
 	</center>
-</body>
+    </body>
 </html>
