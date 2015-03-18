@@ -15,23 +15,23 @@ class PasajeController {
         println params.asiento
         println params.fecha
         println params.precio
-         def u = new Pasaje(nombreUsuario: 'default', 
+         def u = new Pasaje(idPasaje: "5",nombreUsuario: 'default', 
                             origen: params.origen, 
                             destino: params.destino, 
                             retorno: 0,
                             disponible: 1,
                             empresa: "23",
                             bus: params.bus,
-                            asiento:params.asiento,
+                            asiento:"params.asiento",
                             fechaViaje: params.fecha,
                             fechaVenta: params.fecha,
                             precio: params.precio)
         println params.bus
         def b = Bus.findByPlacaBus(params.bus)
-        b.
+        
         println b
 
-      //  u.setBus(b)
+       // u.setBus(b)
         if (u.validate()) {
             flash.message = "creado"
             //print (u.asiento)
@@ -69,8 +69,11 @@ class PasajeController {
                 if (u.errors.hasFieldErrors("nombreUsuario")) {
                     flash.message = "NU"
                 }
-                else flash.message="en otros"
+                else{ 
+                    println u.errors
+                    flash.message="en otros"
                 render view:"/pasaje/crear"
+                }
         }
     }
     
