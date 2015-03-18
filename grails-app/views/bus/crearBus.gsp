@@ -33,7 +33,7 @@
                     <label> codigo de Bus:     </label><input type="text" name="id">
                     <label> placa Bus:         </label><input type="text" name="placa">
                     <label> ID empresa:        </label><br><g:select name="idemp" 
-                        from="${flotas.Empresa.list()}" optionKey="idEmpresa" optionValue="idEmpresa"
+                        from="${flotas.Empresa.list()}" optionKey="idEmpresa" optionValue="nombreEmpresa"
                         noSelection="['null':'-Elija la empresa-']"/><br>
                     <label> numero Sillas:     </label><input type="text" name="num">
                     <label> conductor asignado:</label><input type="text" name="cond">

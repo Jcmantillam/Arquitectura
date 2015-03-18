@@ -37,7 +37,7 @@
             </center>
         </g:form>
         <table>
-            <tr><td><label>&nbsp;</label></td>
+            <tr>
                 <td><g:form controller="Empresa" action="vistaCrear">
                      <input type="submit" value="Crear empresa"/>
                    </g:form></td>

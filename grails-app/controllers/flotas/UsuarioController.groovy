@@ -193,4 +193,11 @@ class UsuarioController {
     def Cancelar={
         render("Cancelado")
     }
+    
+    def ComprarPasajes={
+        def num
+        num = Pasajes.findByIdPasaje(params.selectPasaje)
+        [numero:num.asiento]
+        render(view:"/usuario/numeroCompra")
+    }
 }

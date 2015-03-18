@@ -8,15 +8,15 @@
 
 <html>
     <head>
-            <meta name="layout" content="main"/>
-            <!--Mensaje de la cabecera, colocar nombre de usuario-->
-            <title> Bienvenido ${flash.messageB} </title> 
-            <style type="text/css">
-                label{
-                    float:left;
-                    width:65px;
-                }
-            </style>
+        <meta name="layout" content="main"/>
+        <!--Mensaje de la cabecera, colocar nombre de usuario-->
+        <title> Bienvenido ${flash.messageB} </title> 
+        <style type="text/css">
+            label{
+                float:left;
+                width:65px;
+            }
+        </style>
     </head>
     <body>
         <br>
