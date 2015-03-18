@@ -22,8 +22,8 @@
 	<center>
             <g:form controller="Usuario" action="ComprarPasajes">
                 <br>
-                <g:select id="mySelect" name="selectPasaje" from="${flotas.Pasaje.list()}" 
-                    optionValue="origenAndDestino" 
+                <g:select id="mySelect" name="sPasaje" from="${flotas.Pasaje.list()}" 
+                    optionKey="idPasaje" optionValue="origenAndDestino" 
                     noSelection="['null':'-Elija el viaje a comprar-']"
                     value="idPasaje"/>
                 <br><br>
