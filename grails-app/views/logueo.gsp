@@ -24,6 +24,7 @@
            </head>
 	<body>
             <font color="blue" size="5"> ${flash.messageM} </font>
+            
             <g:form controller="Usuario" action="Entrar">
                     <center>
                         <font color="red" size="2"> ${flash.messageL} </font>
@@ -39,9 +40,11 @@
                         <label>&nbsp;</label><input type="submit" value="Entrar"/>
                     </center>
             </g:form>
-            
+            <center>
             <g:form controller="Usuario" action="nuevo_usuario">
                 <label>&nbsp;</label><input type="submit" value="Crear usuario"/>
             </g:form>
+            </center>
+            <font color="blue" size="1">Nodo: <%= java.net.InetAddress.getLocalHost().getHostAddress()%></font>
 	</body>
 </html>
