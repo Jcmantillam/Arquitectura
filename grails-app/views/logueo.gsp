@@ -43,5 +43,7 @@
             <g:form controller="Usuario" action="nuevo_usuario">
                 <label>&nbsp;</label><input type="submit" value="Crear usuario"/>
             </g:form>
-	</body>
+            <center><font color="blue" size="1">Nodo: <%= java.net.InetAddress.getLocalHost().getCanonicalHostName()%></font><center/>
+            
+            </body>
 </html>
