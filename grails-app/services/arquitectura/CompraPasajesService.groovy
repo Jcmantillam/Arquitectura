@@ -1,9 +1,6 @@
 package arquitectura
 
-import flotas.Usuario
-import flotas.Usuario
-import flotas.Usuario
-import flotas.Usuario
+import flotas.*
 import grails.transaction.Transactional
 import javax.jws.soap.*
 import javax.jws.*
@@ -19,8 +16,8 @@ class CompraPasajesService {
     
     //Retorna todos los viajes disponibles
     @WebMethod(operationName = "ConsultarViajes",action="http://terminal/ConsultarViajes")
-    def Pasajes ConsultasViajes(){
-        return Pasajes.list()
+    def Pasaje ConsultasViajes(){
+        return Pasaje.list()
     }
     
     //Retorna true si existe la cantidad de pasajes que quiere el usuario
@@ -43,14 +40,14 @@ class CompraPasajesService {
         @WebParam(name='numeroCompra') int numeroCompra, @WebParam(name='viaje') String viaje, @WebParam(name='compra') String compra,
         @WebParam(name='precioT') int precioT, @WebParam(name='iden') int iden){
         //Registro del nuevo usuario
-        def usuario = new Usuario (nombreUsuario: usuario, 
+        def u = new Usuario (nombreUsuario: usuario, 
                             nombre: nombre, 
                             apellido: apellido, 
                             correo: email, 
                             contraseña: contrasena, 
                             rol: "usuario")
         //Valida el registro del nuevo usuario
-        if (!usuario.validate()) return false
+        if (!u.validate()) return false
         //Compra de los tiquetes
         def c = new Usuario_Pasaje(nombreUsuario: usuario, 
                             idPasaje: idVenta, 
