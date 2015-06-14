@@ -37,8 +37,16 @@
                     </tr>
                 </g:each>
             </table>
+            <p>Seleccione la matrícula del autobús en el cual desea hacer la reserva:</p>
+            
         </center>
-        <g:form controller="Usuario" action="">
+        <g:form controller="Usuario" action="confirmarCompra">
+            <br>
+                <g:select id="mySelect" name="getPasaje" from="${numero}" 
+                    optionKey="bus" optionValue="bus" 
+                    noSelection="['null':'-Elija el bus-']"
+                    value="Pasaje.bus"/>
+                <br><br>
             <label>¿Cuantos pasajes desea?:</label><input type="text" name="numPasajes">
             <input type="submit" value="Comprar"> 
         </g:form>

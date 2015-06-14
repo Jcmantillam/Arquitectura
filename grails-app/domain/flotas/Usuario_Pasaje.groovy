@@ -14,8 +14,8 @@ class Usuario_Pasaje {
     static belongsTo = [pasaje:Pasaje, usuario:Usuario]
     
     static constraints = {
-        id (unique:true)
-        numeroComprados (range: 1..5)
+        //id (unique:true)
+        //numeroComprados (range: 1..5)
     }
     
     static mapping = {

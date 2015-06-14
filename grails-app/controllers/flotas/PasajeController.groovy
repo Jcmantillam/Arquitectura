@@ -15,21 +15,17 @@ class PasajeController {
         println params.asiento
         println params.fecha
         println params.precio
-         def u = new Pasaje(idPasaje: "5",nombreUsuario: 'default', 
-                            origen: params.origen, 
+        def u = new Pasaje( origen: params.origen, 
                             destino: params.destino, 
                             retorno: 0,
                             disponible: 1,
-                            empresa: "23",
+                            empresa: params.bus,
                             bus: params.bus,
-                            asiento:"params.asiento",
+                            asiento: params.asiento,
                             fechaViaje: params.fecha,
                             fechaVenta: params.fecha,
                             precio: params.precio)
-        println params.bus
         def b = Bus.findByPlacaBus(params.bus)
-        
-        println b
 
        // u.setBus(b)
         if (u.validate()) {

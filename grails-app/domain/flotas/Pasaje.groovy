@@ -2,7 +2,6 @@ package flotas
 
 class Pasaje {
     
-    String idPasaje
     String origen
     String destino
     boolean retorno

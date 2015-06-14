@@ -22,6 +22,7 @@
         <br>
         <font> Bienvenido ${flash.messageB} </font>
         <br>
+    <center><font color="blue" size="5"> ${flash.messageP} </font></center>
         <g:form controller="Usuario" action="MostrarInfo">
             <label>&nbsp;</label><input type="submit" value="Mostrar Datos"/>
         </g:form>

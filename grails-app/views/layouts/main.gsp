@@ -28,11 +28,12 @@
                     <td width="200"><font color="firebrick" size="2"> ${flash.messageL} </font>
                     </td>
                     <td width="366"><p>
-                        <font size="1" color="white">
+                        <center><font color="white" size="1">Nodo: <%= java.net.InetAddress.getLocalHost().getCanonicalHostName()%></font><center/>
+<!--                        <font size="1" color="white">
                             Usuario:<g:textField name="nameUser"/>
                             Contraseña:<g:passwordField name="password"/>
                             <input type="submit" value="Entrar"/>
-                        </font>
+                        </font>-->
                     </p></td>
                 </g:form>
             </tr>

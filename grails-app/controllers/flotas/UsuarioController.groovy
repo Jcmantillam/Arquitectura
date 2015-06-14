@@ -1,7 +1,9 @@
 package flotas
 
 class UsuarioController {
-
+    
+    def gen
+    
     def index(){
         
     }
@@ -172,6 +174,42 @@ class UsuarioController {
         render (view:"/usuario/comprarBoleto")
     }
     
+    def confCompra={
+        sPasaje = params.sPasaje
+        def num = Pasaje.findByIdPasaje(params.sPasaje)
+        def u = new Usuario_Pasaje(nombreUsuario: session.nombreUsuario, 
+                            idPasaje: num.id, 
+                            placaBus: num.bus, 
+                            empresa: num.empresa,
+                            origen: num.origen,
+                            destino: num.destino,
+                            numeroComprados: 23,
+                            fechaViaje: num.fechaViaje,
+                            fechaVenta: num.fechaVenta,
+                            precio: num.precio,
+                            id: 1
+                        )
+        
+       println num.id
+       println num.bus
+       println num.empresa
+       println num.origen
+       println num.destino
+       println num.fechaViaje
+       println num.fechaVenta
+       println num.precio
+       println u.validate()
+        if (u.validate()) {
+            flash.message = "creado"
+            //print (u.asiento)
+            u.save(flush:true)
+            render (view:"/usuario/admin")
+        }
+        [numero:num]
+        
+        
+    }
+    
     def Lista_Tiquetes={
         def tiquetes
         tiquetes = Usuario_Pasaje.findAllByNombreUsuario(session.Nombre)
@@ -195,11 +233,18 @@ class UsuarioController {
     }
     
     def comprarPasajes={
-        
+        def num = Pasaje.findById(params.sPasaje)
         println params.sPasaje
-        def num = Pasaje.findByIdPasaje(params.sPasaje)
-        println num.asiento
         [numero:num]
+    }
+    
+    def confirmarCompra={
+        def pas = Pasaje.findByBus(params.getPasaje)
+        int numPas = Integer.parseInt(pas.asiento) -Integer.parseInt(params.numPasajes)
+        pas.asiento = Integer.toString(numPas)
+        pas.save(flush:true)
+        flash.messageP="Compra exitosa"
+        render view:"/usuario/vista_cliente"
         
     }
 }
