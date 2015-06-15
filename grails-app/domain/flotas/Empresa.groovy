@@ -8,8 +8,8 @@ class Empresa {
     static hasMany = [buses:Bus]
     
     static constraints = {
-        id (blank:false, unique:true)
-        nombreEmpresa (blank:false, unique:true)
+       // id (blank:false, unique:true)
+        //nombreEmpresa (blank:false, unique:true)
     }
     
     static mapping={

@@ -1,7 +1,9 @@
 package flotas
 
 class PasajeController {
-
+    
+    static scaffolding = true
+    
     def index() { }
     def vistaPasaje={
         render (view: "/pasaje/crear")
@@ -19,7 +21,7 @@ class PasajeController {
                             destino: params.destino, 
                             retorno: 0,
                             disponible: 1,
-                            empresa: params.bus,
+                            empresa: params.empresa,
                             bus: params.bus,
                             asiento: params.asiento,
                             fechaViaje: params.fecha,

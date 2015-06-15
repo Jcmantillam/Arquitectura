@@ -20,14 +20,14 @@ class CompraPasajesService {
     def boolean ComprarTiquetes(@WebParam(name='usuario') String usuario){
         //Compra de los tiquetes
         def c = new Usuario_Pasaje(nombreUsuario: usuario, 
-                            idPasaje: /*Cambiar*/, 
-                            placaBus: /*Cambiar*/, 
-                            empresa: /*Cambiar*/,
-                            origen: /*Cambiar*/,
-                            destino: /*Cambiar*/,
+                            idPasaje: 1, 
+                            placaBus: "huk123", 
+                            empresa: "0",
+                            origen: "Bogotá",
+                            destino: "Cali",
                             numeroComprados: 1,
-                            precio: /*Cambiar*/,
-                            id: /*Cambiar*/)
+                            precio: "150000",
+                            id: 1)
         //Valida el registro de la nueva venta
         if(!c.validate()) return false
         //Si las dos se cumplen se guarda y se retorna true
