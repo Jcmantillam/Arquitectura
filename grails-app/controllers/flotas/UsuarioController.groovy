@@ -5,7 +5,6 @@ class UsuarioController {
     static scaffolding = true
         
     def Entrar={
-        //init()
         if(session.Usuario){
             flash.messageL="Hay un usuario logueado"
             render (view:"/logueosalir")
@@ -196,6 +195,16 @@ class UsuarioController {
     
     def confirmarCompra={
         def pas = Pasaje.findByBus(params.getPasaje)
+        def c = new Usuario_Pasaje(nombreUsuario: session.Usuario, 
+                            idPasaje: pas.id, 
+                            placaBus: pas.bus, 
+                            empresa: pas.bus,
+                            origen: pas.origen,
+                            destino: pas.destino,
+                            numeroComprados: params.numPasajes,
+                            precio: pas.precio)
+        //Valida el registro de la nueva venta
+        c.save(flush:true)
         int numPas = Integer.parseInt(pas.asiento) -Integer.parseInt(params.numPasajes)
         pas.asiento = Integer.toString(numPas)
         pas.save(flush:true)

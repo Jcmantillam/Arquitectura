@@ -16,18 +16,19 @@ class CompraPasajesService {
     static expose = ['cxfjax']
     
     //crea el usuario en esta aplicacion y vende los pasajes solicitados
-    @WebMethod(operationName = "ComprarTiquetes",action="http://Flotas/ComprarTiquetes")
+    @WebMethod(operationName = "ComprarTiquetes",action="http://terminal/ComprarPasajes")
     def boolean ComprarTiquetes(@WebParam(name='usuario') String usuario){
         //Compra de los tiquetes
         def c = new Usuario_Pasaje(nombreUsuario: usuario, 
-                            idPasaje: 1, 
+                            idPasaje: "1", 
                             placaBus: "huk123", 
                             empresa: "0",
                             origen: "Bogotá",
                             destino: "Cali",
                             numeroComprados: 1,
-                            precio: "150000",
-                            id: 1)
+                            precio: "150000")
+        //Valida el registro de la nueva venta
+        //c.save(flush:true)
         //Valida el registro de la nueva venta
         if(!c.validate()) return false
         //Si las dos se cumplen se guarda y se retorna true

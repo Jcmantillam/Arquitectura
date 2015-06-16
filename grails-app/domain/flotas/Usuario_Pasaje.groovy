@@ -9,9 +9,6 @@ class Usuario_Pasaje {
     String origen
     String destino
     int numeroComprados
-    int id
-    
-    static belongsTo = [pasaje:Pasaje, usuario:Usuario]
     
     static constraints = {
         //id (unique:true)
@@ -20,7 +17,5 @@ class Usuario_Pasaje {
     
     static mapping = {
         table "Usuario_Pasaje" 
-        version false
-        id generator: "assigned", name: "id" 
     }
 }
