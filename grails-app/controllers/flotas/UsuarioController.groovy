@@ -20,6 +20,7 @@ class UsuarioController {
                     session.Apellido = consult.apellido
                     session.Correo = consult.correo
                     session.rol = consult.rol
+                    session.saldo= consult.saldo
                     if(session.rol == "usuario"){
                         flash.messageB = consult.nombre
                         render view:"/usuario/vista_cliente"
@@ -61,7 +62,8 @@ class UsuarioController {
                             apellido: params.lastname, 
                             correo: params.email, 
                             contraseña: params.password, 
-                            rol: "usuario")
+                            rol: "usuario",
+                            saldo: 1000000)
         if (u.validate()) {
             flash.messageM = "Usuario registrado exitosamente"
             render view:"/logueo"
@@ -144,19 +146,8 @@ class UsuarioController {
                             precio: num.precio,
                             id: 1
                         )
-        
-       println num.id
-       println num.bus
-       println num.empresa
-       println num.origen
-       println num.destino
-       println num.fechaViaje
-       println num.fechaVenta
-       println num.precio
-       println u.validate()
         if (u.validate()) {
             flash.message = "creado"
-            //print (u.asiento)
             u.save(flush:true)
             render (view:"/usuario/admin")
         }
@@ -189,27 +180,50 @@ class UsuarioController {
     
     def comprarPasajes={
         def num = Pasaje.findById(params.sPasaje)
-        println params.sPasaje
         [numero:num]
     }
     
     def confirmarCompra={
+        
         def pas = Pasaje.findByBus(params.getPasaje)
-        def c = new Usuario_Pasaje(nombreUsuario: session.Usuario, 
+        int valor = 0
+        if(!pas.retorno){
+            valor = pas.precio
+        }else{
+            valor = 2*pas.precio
+        }
+        if(session.saldo>=valor){
+            def c = new Usuario_Pasaje(nombreUsuario: session.Usuario, 
                             idPasaje: pas.id, 
                             placaBus: pas.bus, 
                             empresa: pas.bus,
                             origen: pas.origen,
                             destino: pas.destino,
                             numeroComprados: params.numPasajes,
-                            precio: pas.precio)
-        //Valida el registro de la nueva venta
-        c.save(flush:true)
-        int numPas = Integer.parseInt(pas.asiento) -Integer.parseInt(params.numPasajes)
-        pas.asiento = Integer.toString(numPas)
-        pas.save(flush:true)
-        flash.messageP="Compra exitosa"
-        render view:"/usuario/vista_cliente"
-        
+                            precio: valor)
+            //Valida el registro de la nueva venta
+            c.save(flush:true)
+            int numPas = pas.asiento -Integer.parseInt(params.numPasajes)
+            def consult = Usuario.findByNombreUsuario(session.Usuario)
+            def aux = new Usuario(nombreUsuario: consult.nombreUsuario, 
+                              nombre: consult.nombre, 
+                              apellido: consult.apellido, 
+                              correo: consult.correo,
+                              contraseña: consult.contraseña, 
+                              rol: consult.rol, 
+                              saldo: consult.saldo - valor)
+            consult.delete(flush:true)
+            aux.save(flush:true)
+//            consult.saldo = consult.saldo - valor
+//            println "Saldo: "+consult.saldo
+//            consult.save(flush:true)
+            pas.asiento = numPas
+            pas.save(flush:true)
+            flash.messageP="Compra exitosa"
+            render view:"/usuario/vista_cliente"
+        } else{
+            flash.messageP="Compra Fallida"
+            render view:"/usuario/vista_cliente"
+        }       
     }
 }

@@ -44,7 +44,8 @@ class CompraPasajesService {
                     apellido: apellido, 
                     correo: email, 
                     contraseña: password, 
-                    rol: "usuario")
+                    rol: "usuario",
+                    saldo: 1000000)
         //Valida el registro del nuevo usuario
         if (!u.validate()){
             return false

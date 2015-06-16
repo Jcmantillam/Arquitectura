@@ -8,10 +8,10 @@ class Pasaje {
     boolean disponible
     String empresa
     String bus
-    String asiento //Por definir si es un int o un String
+    int asiento //Por definir si es un int o un String
     Date fechaViaje
     Date fechaVenta
-    String precio
+    int precio
     
     
     static hasMany = [usuarioPasaje: Usuario_Pasaje]

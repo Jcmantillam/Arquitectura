@@ -8,6 +8,7 @@ class Usuario {
     String correo
     String rol
     String contraseña
+    int saldo
     
 //    static hasMany = [usuarioPasaje: Usuario_Pasaje]
     
