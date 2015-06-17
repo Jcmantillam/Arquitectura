@@ -14,8 +14,8 @@ class Pasaje {
     int precio
     
     
-    static hasMany = [usuarioPasaje: Usuario_Pasaje]
-    static belongsTo = [bus:Bus]
+    //static hasMany = [usuarioPasaje: Usuario_Pasaje]
+    //static belongsTo = [bus:Bus]
     
     static constraints = {
         //nombreUsuario (unique:true)

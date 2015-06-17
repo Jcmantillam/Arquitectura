@@ -2,7 +2,7 @@ package flotas
 
 class EmpresaController {
     
-    static scaffolding = true
+    static scaffold = true
     
     def index() {
     init()

@@ -2,7 +2,7 @@ package flotas
 
 class BusController {
     
-    static scaffolding = true
+    static scaffold = true
     
     def index() { }
     def init() { }

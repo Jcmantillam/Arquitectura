@@ -2,7 +2,7 @@ package flotas
 
 class UsuarioController {
     
-    static scaffolding = true
+    static scaffold = true
         
     def Entrar={
         if(session.Usuario){
@@ -56,7 +56,7 @@ class UsuarioController {
     }
     
     def Registrarse={
-        init()
+        //init()
          def u = new Usuario(nombreUsuario: params.nameUser, 
                             nombre: params.name, 
                             apellido: params.lastname, 
@@ -175,6 +175,7 @@ class UsuarioController {
     }
     
     def Cancelar={
+        
         render("Cancelado")
     }
     
@@ -183,8 +184,12 @@ class UsuarioController {
         [numero:num]
     }
     
+    def consultarSaldo={
+        def consult = Usuario.findByNombreUsuario(session.Usuario)
+        flash.messageCon = consult.saldo
+    }
+    
     def confirmarCompra={
-        
         def pas = Pasaje.findByBus(params.getPasaje)
         int valor = 0
         if(!pas.retorno){
@@ -192,6 +197,7 @@ class UsuarioController {
         }else{
             valor = 2*pas.precio
         }
+        valor = valor*Integer.parseInt(params.numPasajes)
         if(session.saldo>=valor){
             def c = new Usuario_Pasaje(nombreUsuario: session.Usuario, 
                             idPasaje: pas.id, 
