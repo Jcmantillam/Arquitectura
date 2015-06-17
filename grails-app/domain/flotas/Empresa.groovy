@@ -5,7 +5,7 @@ class Empresa {
     String idEmpresa
     String nombreEmpresa
 
-    //static hasMany = [buses:Bus]
+    static hasMany = [buses:Bus]
     
     static constraints = {
        // id (blank:false, unique:true)
@@ -13,12 +13,8 @@ class Empresa {
     }
     
     static mapping={
-        table "Empresa"
-        id generator: 'assigned', name: "idEmpresa", type: 'string'
+        table "Empresas"
+        id generator: 'assigned', name: "idEmpresa", type: 'String'
         version false
-        columns{
-            idEmpresa column: 'idEmpresa'
-            nombreEmpresa column: 'nombreEmpresa'
-        }
     }
 }

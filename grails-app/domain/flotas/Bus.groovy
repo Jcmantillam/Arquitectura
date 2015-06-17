@@ -9,8 +9,8 @@ class Bus {
     String tipoBus
    
     
-    //static hasMany = [pasaje:Pasaje]
-    //static belongsTo = [empresa:Empresa]
+    static hasMany = [pasaje:Pasaje]
+    static belongsTo = [empresa:Empresa]
     
     static constraints = {
         //placaBus (blank:false, unique:true, matches:"[a-zA-Z][a-zA-Z][a-zA-Z]\\d{3}")//Placas con 3 letras y 3 dígitos

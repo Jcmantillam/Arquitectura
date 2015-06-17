@@ -1,7 +1,7 @@
 package flotas
 
-
-class Usuario {    
+class Usuario {
+    
     String nombre
     String apellido
     String nombreUsuario
@@ -13,11 +13,11 @@ class Usuario {
 //    static hasMany = [usuarioPasaje: Usuario_Pasaje]
     
     static constraints = {
-//        nombreUsuario (blank:false, unique:true)
-//        nombre (blank:false)
-//        apellido (blank:false)
-//        correo (blank:false, unique:true, email:true)
-//        rol (inList:["usuario","admin"])
+        nombreUsuario (blank:false, unique:true)
+        nombre (blank:false)
+        apellido (blank:false)
+        correo (blank:false, unique:true, email:true)
+        rol (inList:["usuario","admin"])
     }
     
     static mapping={

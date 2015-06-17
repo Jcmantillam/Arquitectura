@@ -25,34 +25,30 @@
             <br>
             <table>
                 <tr>
-                    <td><strong>Placa de bus</strong>
                     <td><strong>Origen</strong></td>
                     <td><strong>Destino</strong></td>
                     <td><strong>Lugares</strong></td>
-                    <td><strong>Fecha y hora de partida</strong>
                 </tr>
                 <g:each in="${numero}" var="disponibles">
                     <tr>
-                        <td> ${disponibles.bus} </td>
                         <td> ${disponibles.origen} </td>
                         <td> ${disponibles.destino} </td>
                         <td> ${disponibles.asiento} </td>
-                        <td> ${disponibles.fechaViaje} </td>
                     </tr>
                 </g:each>
             </table>
             <p>Seleccione la matrícula del autobús en el cual desea hacer la reserva:</p>
-            <g:form controller="Usuario" action="confirmarCompra">
+            
+        </center>
+        <g:form controller="Usuario" action="confirmarCompra">
             <br>
                 <g:select id="mySelect" name="getPasaje" from="${numero}" 
                     optionKey="bus" optionValue="bus" 
                     noSelection="['null':'-Elija el bus-']"
                     value="Pasaje.bus"/>
                 <br><br>
-            <p>¿Cuantos pasajes desea?:</p>
-                <input type="text" name="numPasajes">
-            <input type="submit" value="Comprar"/> 
-            </g:form>
-        </center>
+            <label>¿Cuantos pasajes desea?:</label><input type="text" name="numPasajes">
+            <input type="submit" value="Comprar"> 
+        </g:form>
     </body>
 </html>

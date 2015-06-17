@@ -2,7 +2,7 @@ package flotas
 
 class PasajeController {
     
-    static scaffold = true
+    static scaffolding = true
     
     def index() { }
     def vistaPasaje={

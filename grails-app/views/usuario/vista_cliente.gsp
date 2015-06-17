@@ -53,11 +53,6 @@
                         <label>&nbsp;</label><input type="submit" value="Imprimir pasaje"/>
                     </g:form>
                 </td>
-                <td>
-                    <g:form controller="Usuario" action="consultarSaldo">
-                        <label>&nbsp;</label><input type="submit" value="Consultar saldo"/>
-                    </g:form>
-                </td>
             </tr>
         </table>
         <br>
